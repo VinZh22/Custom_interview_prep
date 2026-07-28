@@ -10,7 +10,7 @@ cold months later.
 | --- | --- |
 | [math/](math/) | Probability, statistics, linear algebra, calculus/optimization, combinatorics, brainteasers |
 | [coding/](coding/) | Algorithms, data structures, data manipulation (pandas), system design + a runnable Python workspace |
-| [data-science/](data-science/) | ML theory, experimentation/A-B testing, case studies, product analytics |
+| [data-science/](data-science/) | ML theory, LLMs, experimentation/A-B testing, case studies, product analytics |
 | [quant/](quant/) | Market-making games, derivatives, time series, mental math |
 | [behavioral/](behavioral/) | STAR stories, per-company notes |
 | [mock-interviews/](mock-interviews/) | Timed session write-ups and post-mortems |

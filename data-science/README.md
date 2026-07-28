@@ -7,6 +7,8 @@ Two very different interview modes: *theory* (can you derive it) and *case*
 
 - [ml-theory/](ml-theory/) — bias/variance, regularization, linear & logistic regression,
   trees/boosting, SVM, clustering, PCA, neural nets, metrics, leakage, imbalance.
+- [llm/](llm/) — transformers and attention, tokenization, fine-tuning and alignment, RAG,
+  agents and tool use, evaluation, and inference/serving cost math.
 - [experimentation/](experimentation/) — A/B test design, power and sample size,
   multiple testing, CUPED, switchback and network effects, novelty, guardrail metrics.
 - [case-studies/](case-studies/) — open-ended prompts: "metric dropped 8% overnight",
@@ -28,6 +30,14 @@ Two very different interview modes: *theory* (can you derive it) and *case*
 Business goal → label definition → unit of prediction → features and their availability
 at serve time → baseline → offline metric → online metric → failure modes → monitoring.
 
+## LLM systems: three interview flavors
+
+Prepare separately, they're graded differently — **theory** (derive attention, explain the
+KV cache), **systems** (memory, latency, throughput, cost arithmetic under pressure), and
+**applied** (design a RAG or agent system, and defend how you'd evaluate it). Evaluation is
+part of the answer, never a follow-up. See the [`llm` skill](../.claude/skills/llm/SKILL.md).
+
 ## Index
 
 - [experimentation/001-example-sample-size.md](experimentation/001-example-sample-size.md)
+- [llm/001-example-kv-cache-sizing.md](llm/001-example-kv-cache-sizing.md)

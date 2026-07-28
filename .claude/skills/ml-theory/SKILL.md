@@ -20,7 +20,7 @@ naive Bayes and its independence assumption · decision trees, splitting criteri
 entropy), pruning · bagging vs boosting; random forests vs gradient boosting · SVM, the margin,
 the kernel trick · k-means (and why it's not guaranteed optimal), hierarchical clustering,
 DBSCAN · PCA and its relation to SVD · neural nets: backprop, activations, vanishing gradients,
-batch norm, dropout · embeddings · transformers/attention at a conceptual level · metrics:
+batch norm, dropout · embeddings · metrics:
 precision/recall/F1, ROC-AUC vs PR-AUC, log loss, calibration · class imbalance · data leakage ·
 feature importance and its pitfalls (SHAP vs impurity).
 
@@ -73,3 +73,7 @@ here" and catches confidently wrong intuitions. State assumptions explicitly in 
 ISL for the framing, ESL for the depth, *Ace the Data Science Interview* for question style.
 Theory backing lives in [statistics](../statistics/SKILL.md) and
 [linear-algebra](../linear-algebra/SKILL.md).
+
+**Transformers, attention, and anything LLM-specific live in [llm](../llm/SKILL.md)** — this
+skill stops at classical ML plus general neural nets. If a question is about attention, a KV
+cache, tokenization, RAG, fine-tuning, or LLM evaluation, use that skill instead.

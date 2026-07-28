@@ -30,7 +30,7 @@ to compare against the reference — then walk the existing `<details>` block wi
 | --- | --- |
 | [math/](math/) | probability · statistics · linear-algebra · calculus-optimization · combinatorics · brainteasers |
 | [coding/](coding/) | algorithms · data-structures · data-manipulation · system-design |
-| [data-science/](data-science/) | ml-theory · experimentation · case-studies · product-analytics |
+| [data-science/](data-science/) | ml-theory · llm · experimentation · case-studies · product-analytics |
 | [quant/](quant/) | market-making · derivatives · time-series · mental-math |
 | [behavioral/](behavioral/) | stories · company-notes |
 | [coding/lib/](coding/lib/), [coding/tests/](coding/tests/) | Runnable implementations + pytest suite |
