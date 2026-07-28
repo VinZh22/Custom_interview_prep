@@ -15,6 +15,12 @@ with replacement. What is the expected number of *distinct* types you end up hol
 
 <Write your attempt here before opening the solution.>
 
+First attempt: I tried decomposing the expected number into $\sum x_i$ where $x_i$ is the indicator that we have seen the $i^{th}$ type during the k draws. We have $x_i = 1 - (\frac{n-1}{n})^k$, so the expected value is $n - n(\frac{n-1}{n})^k$.
+
+Second attempt: Another approach which could work algorithmically was to find a recursion formula, we could then compute it with DP. The formula I found was: $X_{n, k} = 1 + \frac{1}{n-1}X_{n, k-1} + \frac{n-1}{n-1}X_{n-1, k-1}$.
+
+Not sure that both reconcile.
+
 ---
 
 <details>
@@ -67,3 +73,15 @@ O(1) closed form.
 
 Cue: "expected number of X satisfying a property" → indicators + linearity, and choose
 the indicator over the *objects* (types), not the *trials* (draws).
+
+Cue (missed 2026-07-28): when deciding what state a recursion needs, check whether the
+transition probability is *linear* in the running state. Here `P(k-th draw is new)` is
+`(n - X_{k-1})/n`, linear in `X_{k-1}`, so expectation passes through and a mean-only
+state suffices — `f(k) = 1 + (1 - 1/n) f(k-1)`, one index, no distribution carried. If
+the transition were nonlinear in the state (say `∝ X²`), the mean would not propagate and
+you *would* need the full distribution. Second trap in the same attempt: an unconditional
+`1 +` in the recursion asserts every draw yields a new type — the `+1` belongs inside the
+branch where the new type actually arrives.
+
+Also: `k/n` alone determines the answer only asymptotically (`E[X]/n → 1 - e^{-k/n}`),
+not exactly. Good enough for a fast estimate out loud, wrong as a closed form.
