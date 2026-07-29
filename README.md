@@ -17,6 +17,7 @@ cold months later.
 | [progress/](progress/) | Practice log and spaced-repetition queue |
 | [resources/](resources/) | Books, problem sets, links |
 | [templates/](templates/) | Copy these when adding new material |
+| [tools/](tools/) | Workspace tooling — `python -m tools.problems` lists what's left to solve |
 
 ## Working with Claude Code in here
 
@@ -45,6 +46,8 @@ Every sub-category also has a skill of the same name (`probability`, `algorithms
 
 ## Workflow
 
+0. `python -m tools.problems` — the problems still to do. `stats` for the breakdown,
+   `--random -n 1` to be handed one. See [tools/README.md](tools/README.md).
 1. Pick a topic folder; work the next unsolved problem *without* opening the solution.
 2. Write your attempt, then reveal and diff against the reference solution.
 3. Log the attempt in [progress/log.md](progress/log.md); anything you got wrong goes into

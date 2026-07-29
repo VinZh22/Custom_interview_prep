@@ -38,11 +38,27 @@ to compare against the reference — then walk the existing `<details>` block wi
 | [progress/](progress/) | `log.md` (attempts), `review-queue.md` (spaced repetition) |
 | [mock-interviews/](mock-interviews/) | Timed session write-ups |
 | [resources/](resources/) | Books and links, with a position marker |
+| [tools/](tools/) | Workspace tooling. See [tools/README.md](tools/README.md) |
 
 Each sub-category has a skill of the same name describing its scope, core techniques, and
 what a good problem in it looks like. Read that skill before writing or tutoring a problem
 in that area — e.g. `probability`, `algorithms`, `market-making`, `experimentation`.
 They live in [.claude/skills/](.claude/skills/).
+
+## Finding out what's left
+
+Don't grep for it — ask the catalogue:
+
+```bash
+python -m tools.problems                  # paths still to do (unsolved + tried)
+python -m tools.problems --status tried    # attempted but not cracked
+python -m tools.problems stats             # counts per status and per area
+python -m tools.problems --random -n 1     # hand the user something to work on
+```
+
+Statuses are `unsolved` (untouched) · `tried` (attempt written, not solved) · `solved`.
+Full options in [tools/README.md](tools/README.md). Use it when the user asks what to work
+on next, when checking coverage before writing a new problem, or to pick the next number.
 
 ## Conventions
 

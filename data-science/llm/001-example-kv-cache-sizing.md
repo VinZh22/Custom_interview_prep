@@ -4,7 +4,7 @@
 - **Difficulty:** medium
 - **Source:** classic serving question (example file showing the format)
 - **Asked by:** ML infra / inference and LLM platform loops
-- **Attempts:** —
+- **Attempts:** 2026-07-29 ✓
 
 ## Statement
 
@@ -31,6 +31,28 @@ Do the arithmetic out loud. Powers of two are deliberate — no calculator.
 ## My attempt
 
 <Write your attempt here before opening the solution.>
+
+1. per token: $2*32*32*128 = 263,144$ -> 262KiB roughly / per sequence: per_token * sequence_len -> 2GiB roughly / full batch: per_sequence * batch_size -> 32 GiB
+2. We add 6.7B parameters, in fp16 it would be 13 GiB, with batch-size 16, it would take 208 GiB, it doesn't fit...
+3. changing the float precision, maybe to fp4, it would now fit easily. 208 to 52GiB for the weights, and 32 GiB to 8 GiB for KV cache, so in total 60 GiB, fits comfortably.
+4. Considering we are now on fp4, we get 33.3 full batch per second, so 533,3 token/second. 
+
+Sorry still used calculator (simple python script), could maybe be done with paper, but seems impossible in the head. 
+
+Attempt 2 for 1:
+Use powers to sum directly. We have: 2^{1+5+5+7+13+4+1} = 2^{36} = 2^6 GB
+
+2. the total would be 64+13 = 77 GB...
+3. Changing to fp8 would give 37 GB roughly, easy now.
+
+Attempt 2 for 4:
+If batch-size of 1 then we can take fp16, giving us 17GB one forward pass + KV Cache, giving us 117 token/sec
+
+Attempt 3 for 4:
+The FLOP count for a forward is 2*N*D, so 2*6.7B*117=1,57TFLOP per second
+So with a 312TFLOP/s of A100, the bottleneck is memory wise.
+
+3. I could touch the head counts and do a GQA, by grouping the heads.
 
 ---
 
