@@ -6,7 +6,8 @@ cover almost every prompt.
 ## Folders
 
 - [stories/](stories/) — one file per story, STAR format
-  ([../templates/behavioral-star.md](../templates/behavioral-star.md)).
+  ([../templates/behavioral-star.md](../templates/behavioral-star.md)). Name them
+  `personal_<slug>.md` — the `personal_*` gitignore rule keeps real content out of git.
 - [company-notes/](company-notes/) — per-company: values, interview loop, questions you'll
   ask them, why-this-firm answer.
 
@@ -29,6 +30,7 @@ Fill in the story that covers each prompt; empty rows are gaps to write.
 ## Also prepare
 
 - **"Tell me about yourself"** — 90 seconds, arc from past to why-you're-here.
+  Skeleton with per-company swap slots: [tell-me-about-yourself.md](tell-me-about-yourself.md).
 - **"Why this firm / this desk"** — specific, not flattering. One concrete detail about
   their work.
 - **Your questions for them** — three, at least one that only someone who did the reading
